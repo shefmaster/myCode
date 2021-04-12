@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<style>
+			.box {
+					border: 1px solid blue;
+					height: auto;
+					width: 34%;
+					margin: auto;
+			}
+			tr:first-child {
+					color: red;
+			}
+			td {
+					border: 1px solid gray;
+					padding: 10px;
+					text-align: right;
+			}
+	</style>
+		<script type="text/javascript">
+			/*
+					Задание по теме циклы
+					2й вариант
+
+				При вводе начального и конечного числа диапазона трехзначных натуральных чисел
+			необходимо вывести все эти числа в окно браузера в столбик, при этом, если сумма цифр
+			составляет 21 или кратно 7(делится на 7 без остатка), рядом с числом пишем «Бинго!».
+			*/
+				do {
+				var b = +prompt('Введите число в диапазоне от 100 до 999 \nНачальное: ', '100');
+				} while (isNaN(b) || b < 100 || b > 999);
+
+				do {
+						var e = +prompt('Конечное: ', '100')
+				} while (isNaN(e) || e < 100 || e > 999);
+				
+				
+				if (e < b) { b = b ^ e;e = b ^ e;b = b ^ e; }
+
+				document.write('Числа в диапазоне от ' + b + ' до ' + e + ':<br/>');
+				count = e - b;
+
+				for (let i = 0; i <= count; i++, b++) {
+        let buf = getSumNumber(b);
+        let output = b;
+        if(buf === 21 && buf % 7 === 0) {
+            output += ' Бинго! ' + ' Бинго! ';
+        } else if (buf === 21 || buf % 7 === 0) {
+            output += ' Бинго! ';
+        }
+        document.write(output + '<br/>');
+    	}
+
+				function getSumNumber(b) {
+						var sum = 0, tmp;
+						while (b) {
+								tmp = b % 10;
+								b = (b - tmp) / 10;
+								sum += tmp;
+						}
+						return sum;
+				}			
+		</script>	 
+	</head>
+    <body>
+
+<!-- Выведите на экран таблицу перевода температур из градусов цельсия по Фаренгейту и по Реамюру от 0 до 300C с шагом 10С. -->
+
+			<div class="box">
+				<script type="text/javascript">
+					document.write('<table><tr><td>Шкала Цельсия</td><td>Шкала Фаренгейта</td><td>Шкала Реомюра</td></tr>');
+
+					for(let i = 0; i <= 300; i += 10) 
+					{
+					document.write('<tr><td>' + i + '</td><td>' + (i*9/5+32).toFixed(2) + '</td><td>' + (i*4/5).toFixed(2) + '</td></tr>');
+					}
+					document.write('</table>');
+				</script>
+    </div>
+	</body>
+</html>

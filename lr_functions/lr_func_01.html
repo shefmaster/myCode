@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<script type="text/javascript">
+			/*
+					2 вариант.
+          1. Напишите функцию decompOfNumb ()
+          разложения числовых данных на целое
+          число и дробную часть. Функция принимает данные, проверяет их «на число»
+          и возвращает массив из 2-х элементов (
+          целая часть числа и дробная часть) и false,
+          если это совсем не число.
+			*/
+
+
+      function decompOfNumb(num) {
+        num = parseFloat(num)
+        if(isNaN(num)) {
+          return false;
+        }
+        var int_part = Math.trunc(num)
+        var float_part = Number((num - int_part).toFixed(10))
+        var res = []
+        if(int_part < 0) {
+        float_part = Math.abs(float_part)
+        }
+        res.push(int_part, float_part)
+        return res;
+      }
+
+
+
+
+
+		</script>
+	</head>
+    <body>
+
+	</body>
+</html>

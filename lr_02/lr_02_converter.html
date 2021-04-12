@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<script type="text/javascript">
+				/*
+					Задание по теме: 'Операторы условия'
+					0 вариант
+				*/
+			//	2. Написать программу перевода единиц веса в граммы
+
+		var code = +prompt('Введите код единицы измерения:\n1 - гран\n2 - драхма\n3 - унция\n4 - фунт\n5 - стоун', '1');
+		
+		if(isNaN(code) || !Number.isInteger(code))
+		{
+			document.write('Вы ввели неверный код.<br/>');
+		} else if(code <= 0 || code > 5)
+		{
+			document.write('Такого кода не существует.<br/>');
+		} else {
+		var weight = +prompt('Введите вес в заданных единицах:', '0');
+			if(isNaN(weight) || weight < 0)
+			{
+				code = 0;
+				document.write('Вы ввели неверный вес.<br/> ');
+			}
+		}
+		
+		switch(code)
+		{	case 1:
+			document.write('Вес в ' + weight + ' гран = ' + weight*0.0648 + ' грамм.'); break;
+			case 2:
+			document.write('Вес в ' + weight + ' драхм = ' + weight*1.77 + ' грамм.'); break;
+			case 3:
+			document.write('Вес в ' + weight + ' унций = ' + weight*28.35 + ' грамм.'); break;
+			case 4:
+			document.write('Вес в ' + weight + ' фунтов = ' + weight*453.59 + ' грамм.'); break;
+			case 5:
+			document.write('Вес в ' + weight + ' стоунов = ' + weight*6.35 + ' килограмм.'); break;
+			default:
+			document.write('Попробуйте еще раз.')
+		}
+		</script>	 
+	</head>
+    <body>
+
+	</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<script type="text/javascript">
+			/*
+					2 вариант.
+          2. Написать функцию, получающую массив в качестве аргумента,
+          и возвращающую другой массив с теми же элементами, отсортированными в порядке,
+          обратном исходному. Первоначальный массив должен остаться неизменным! 
+          Если аргументов нет или это не массив, функция возвращает false.
+			*/
+
+      var reverseArr = function (inpArray) {
+				if(!Array.isArray(inpArray)) {
+					return false
+				}
+				var arr = inpArray.slice()
+				return arr.reverse()
+			}
+			
+		</script>	 
+	</head>
+    <body>
+
+	</body>
+</html>

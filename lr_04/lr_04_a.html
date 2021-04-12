@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<script type="text/javascript">
+
+      			/*
+				2 вариант.
+        1. Ввести с клавиатуры числовой (строки не принимать!) массив неопределенного размера (признак завершения ввода – символ «!», в массив не входит). Определите максимальный элемент массива и его номер по порядку в массиве. Если максимальный элемент повторяется, выведите в окно браузера значение максимального элемента и массив его номеров по порядку. Тест. Вводим [1, 2, 33, 4, 5, 6, 3, -5, 8, 33]
+        Результат:
+        Массив: 1, 2, 33, 4, 5, 6, 3, -5, 8, 33 Максимальный: 33, в позиции(ях) [2,9]
+			*/
+			var str;
+			var i = 0;
+			var arr = [];
+			var maxIndArr = [];
+			do {
+				str = prompt('Введите ' + (i+1) + '-й элемент массива.\nДля завершения введите - "!":');
+				if(!isNaN(+str) && +str == parseInt(str)) 
+				{
+					arr[i++] = parseInt(str);
+				}
+			} while (str !== '!');
+			
+			var maxInt = Math.max(...arr); 
+
+			for(var j = 0; j < arr.length; j++){
+				if(arr[j] === maxInt) {
+					maxIndArr.push(j);
+				} 
+			}
+
+			if(arr.length == 0) 
+			{			
+				document.write('Массив: нет данных');
+			} else {
+				document.write('Массив : ' + arr + '<br/>');
+				document.write('Максимальный: ' + maxInt + ', в позиции(ях) ' + '[' + maxIndArr + ']');
+			}
+		</script>	 
+	</head>
+    <body>
+	</body>
+</html>
